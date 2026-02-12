@@ -8,11 +8,11 @@ jobs:
   deploy_backend:
     machine: true
     steps:
-      - run echo "fait des saucisses"
+      - run: echo "fait des saucisses"
   integration_tests_backend:
     machine: true
     steps:
-      -run echo "tests"
+      - run: echo "tests"
   acceptances1:
     machine: true
     steps:
@@ -44,8 +44,8 @@ workflows:
     jobs:
       - checkoutAndTest
       - deploy_backend:
-        requires:
-          - checkoutAndTest
+          requires:
+            - checkoutAndTest
       - integration_tests_backend:
           requires:
             - deploy_backend
@@ -54,16 +54,16 @@ workflows:
             - integration_tests_backend
       - acceptances1:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - acceptances2:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - acceptances3:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - acceptances4:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - deployProd:
           requires:
             - acceptances1
