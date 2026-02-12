@@ -54,16 +54,16 @@ workflows:
             - integration_tests_backend
       - acceptances1:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - acceptances2:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - acceptances3:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - acceptances4:
           requires:
-            - waitForStagingToBeUp
+            - deployStaging
       - deployProd:
           requires:
             - acceptances1
