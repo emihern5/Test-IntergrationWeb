@@ -12,7 +12,7 @@ jobs:
   integration_tests_backend:
     machine: true
     steps:
-      -run: echo "tests"
+      - run: echo "tests"
   acceptances1:
     machine: true
     steps:
