@@ -8,11 +8,11 @@ jobs:
   deploy_backend:
     machine: true
     steps:
-      - run echo "fait des saucisses"
+      - run: echo "fait des saucisses"
   integration_tests_backend:
     machine: true
     steps:
-      -run echo "tests"
+      -run: echo "tests"
   acceptances1:
     machine: true
     steps:
