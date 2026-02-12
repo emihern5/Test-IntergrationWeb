@@ -44,8 +44,8 @@ workflows:
     jobs:
       - checkoutAndTest
       - deploy_backend:
-        requires:
-          - checkoutAndTest
+          requires:
+            - checkoutAndTest
       - integration_tests_backend:
           requires:
             - deploy_backend
